@@ -1,0 +1,5 @@
+I wanted to add a note for this question : I encountered a little problem while commiting and pushing my answers,
+and I switched to main branch to do them before 1.10. Therefore there was nothing to push. 
+
+I however understood how to push the changes to main using GitHub, by creating a new pull request on Pull Request tab,
+and comparing my newly created branch to the main.
