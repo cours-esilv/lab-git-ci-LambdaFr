@@ -27,6 +27,8 @@ jobs:
       if: always()
       with:
         files: target/**/*.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKENGIT }}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
@@ -42,5 +44,5 @@ jobs:
       run: |
         docker build -t my-docker-image:latest .
         docker tag my-docker-image:latest docker.pkg.github.com/${{ github.repository }}/my-docker-image:latest
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
+        echo "${{ secrets.TOKENGIT }}" | docker login docker.pkg.github.com -u "${{ github.actor }}" --password-stdin
         docker push docker.pkg.github.com/${{ github.repository }}/my-docker-image:latest
